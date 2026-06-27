@@ -33,3 +33,8 @@ if __name__ == "__main__":
     # Read port from environment variable, default to 8080 for ECS
     port = int(os.getenv("PORT", 8080))
     
+if __name__ == "__main__":
+    import uvicorn
+    # Read port from environment variable, default to 8080 for ECS
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)
